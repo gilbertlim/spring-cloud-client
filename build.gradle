@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.7.0'
+	id 'org.springframework.boot' version '2.3.11.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
@@ -13,7 +13,7 @@ repositories {
 }
 
 ext {
-	set('springCloudVersion', "2021.0.3")
+	set('springCloudVersion', "Hoxton.SR11")
 }
 
 dependencies {
@@ -26,8 +26,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
-//	implementation 'org.springframework.security:spring-security-rsa'
 	implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
+
+	// aws parameter store
+	implementation 'org.springframework.cloud:spring-cloud-starter-aws'
+	implementation 'org.springframework.cloud:spring-cloud-starter-aws-parameter-store-config'
 }
 
 dependencyManagement {

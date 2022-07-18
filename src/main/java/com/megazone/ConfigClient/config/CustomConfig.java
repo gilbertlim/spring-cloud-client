@@ -18,4 +18,8 @@ public class CustomConfig {
     @Value("${test}")
     private String password;
 
+    @Getter
+    @Value("${customer.name}")
+    private String name;
+
 }

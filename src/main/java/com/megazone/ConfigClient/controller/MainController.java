@@ -20,4 +20,9 @@ public class MainController {
     public String getPassword() {
         return "password: " + customConfig.getPassword();
     }
+
+    @GetMapping("/name")
+    public String getName() {
+        return customConfig.getName();
+    }
 }

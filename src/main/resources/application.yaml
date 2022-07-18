@@ -1,2 +1,16 @@
 server:
   port: 8201
+
+# If not running on EC2
+cloud:
+  aws:
+    stack:
+      auto: false
+    region:
+      static: ap-northeast-2
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error

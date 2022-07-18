@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: configclient
+  profiles:
+    active: dev # aws-parameter-store /config/configserver_{dev}/customer.name
+
+  cloud:
+    config:
+      uri: http://localhost:8200
+
+encrypt:
+  key: my_config_key
+
+
+# aws-parameter-store
+# {prefix}/{name}{profile-separator}{profile}/key
+# /config/configserver_dev/key
+aws:
+  paramstore:
+    enabled: true
+    name: configserver
+    prefix: /config
+    region: ap-northeast-2
+    profile-separator: _
